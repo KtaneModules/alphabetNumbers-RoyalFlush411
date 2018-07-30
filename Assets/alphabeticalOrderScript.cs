@@ -217,4 +217,29 @@ public class alphabeticalOrderScript : MonoBehaviour
         }
         levelIndicators[stage].material = levelMaterials[2];
     }
+
+#pragma warning disable 414
+	private string TwitchHelpMessage = "Press the buttons with !{0} press 1 2 3 4 5 6. The buttons are numbered 1 to 6 in clockwise order.";
+#pragma warning restore 414
+	private readonly int[] _buttonMap = { 0, 2, 4, 5, 3, 1 };
+	private IEnumerator ProcessTwitchCommand(string command)
+	{
+		command = command.Trim();
+		string[] split = command.ToLowerInvariant().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+		if (split[0] != "press" || split.Length == 1) yield break;
+
+		List<int> correct = new List<int> { };
+		foreach (string number in split.Skip(1))
+		{
+			int result;
+			if (!int.TryParse(number, out result)) yield break;
+			if (result > buttons.Length || result == 0) yield break;
+			correct.Add(result);
+		}
+		foreach (int number in correct)
+		{
+			yield return null;
+			yield return new[] { buttons[_buttonMap[number - 1]].selectable };
+		}
+	}
 }

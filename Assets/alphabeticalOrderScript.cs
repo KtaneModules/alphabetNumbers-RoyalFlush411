@@ -219,7 +219,7 @@ public class alphabeticalOrderScript : MonoBehaviour
     }
 
 #pragma warning disable 414
-	private string TwitchHelpMessage = "Press the buttons with !{0} press 1 2 3 4 5 6. The buttons are numbered 1 to 6 in clockwise order.";
+	private string TwitchHelpMessage = "Press the buttons with !{0} press 1 2 3 4 5 6. The buttons are numbered 1 to 6 in clockwise order, with 1 being at the top.";
 #pragma warning restore 414
 	private readonly int[] _buttonMap = { 0, 2, 4, 5, 3, 1 };
 	private IEnumerator ProcessTwitchCommand(string command)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: alphabetNumbers
   title: Alphabet Numbers
-  description: 'Alphabet Numbers 1.11
+  description: 'Alphabet Numbers 1.12
 
     ...one, two, three, four... hang on... four, three, two... no... four, one, two...
 
@@ -32,6 +32,6 @@ MonoBehaviour:
 
 
     Manual available here: https://ktane.timwi.de/HTML/Alphabet%20Numbers.html'
-  version: 1.11
+  version: 1.12
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 29e8fac6584e84652bca8497f3d371bb, type: 3}
